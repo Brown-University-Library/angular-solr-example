@@ -115,7 +115,8 @@ var solr = angular.module("solr", [])
 
       var es5getprops = Object.getOwnPropertyNames;
       scope.isEmpty = function() {
-        return (es5getprops(scope.results).length === 0);
+        return !scope.results || (es5getprops(scope.results).length === 0);
+        // return (es5getprops(scope.results).length === 0);
       };
     }
   }
@@ -193,7 +194,8 @@ var solr = angular.module("solr", [])
           'facet.mincount':"1",
           'wt': 'json',
           'json.nl': "map",
-          'rows': that.getRows()
+          'json.wrf': 'JSON_CALLBACK',
+          'rows': that.getRows(),
         };
 
         selectedFacets=this.selected_facets;
