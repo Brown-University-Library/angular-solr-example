@@ -55,7 +55,7 @@ within the solr element
 You can, of course replace the interior document display with your own
 template
 
-### Adding a Srearch Box
+### Adding a Search Box
 
 To display a search box within the page use the "solr-search" element
 
